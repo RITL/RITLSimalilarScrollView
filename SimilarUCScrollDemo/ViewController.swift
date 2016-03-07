@@ -50,7 +50,6 @@ class ViewController: UIViewController ,UIScrollViewDelegate{
         }
         
         scrollView.contentSize = CGSize(width: CGFloat(titles.count) * scrollView.bounds.size.width, height: scrollView.bounds.size.height)
-        
     }
     
     

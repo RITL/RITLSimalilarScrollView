@@ -282,7 +282,5 @@ class YSimailarScrollView: UIView {
             self.showChooseView.frame = frame
             self.showSelectView.frame = self.handleFrame(frame)
         }
-        
     }
-
 }

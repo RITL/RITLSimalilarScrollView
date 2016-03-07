@@ -14,6 +14,7 @@
 		DB7925161C89190F00AEA90C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7925141C89190F00AEA90C /* LaunchScreen.storyboard */; };
 		DB7925211C89190F00AEA90C /* SimilarUCScrollDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7925201C89190F00AEA90C /* SimilarUCScrollDemoTests.swift */; };
 		DB79252C1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79252B1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift */; };
+		DB79253D1C89196E00AEA90C /* YSimailarScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79253C1C89196D00AEA90C /* YSimailarScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DB7925271C89190F00AEA90C /* SimilarUCScrollDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimilarUCScrollDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB79252B1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarUCScrollDemoUITests.swift; sourceTree = "<group>"; };
 		DB79252D1C89190F00AEA90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB79253C1C89196D00AEA90C /* YSimailarScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSimailarScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		DB79250A1C89190F00AEA90C /* SimilarUCScrollDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DB7925391C89193400AEA90C /* SimilarScrollView */,
 				DB79250B1C89190F00AEA90C /* AppDelegate.swift */,
 				DB79250D1C89190F00AEA90C /* ViewController.swift */,
 				DB79250F1C89190F00AEA90C /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				DB79252D1C89190F00AEA90C /* Info.plist */,
 			);
 			path = SimilarUCScrollDemoUITests;
+			sourceTree = "<group>";
+		};
+		DB7925391C89193400AEA90C /* SimilarScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				DB79253C1C89196D00AEA90C /* YSimailarScrollView.swift */,
+			);
+			path = SimilarScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 		DB7925001C89190F00AEA90C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = Y;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = YueWen;
@@ -258,6 +270,7 @@
 			files = (
 				DB79250E1C89190F00AEA90C /* ViewController.swift in Sources */,
 				DB79250C1C89190F00AEA90C /* AppDelegate.swift in Sources */,
+				DB79253D1C89196E00AEA90C /* YSimailarScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

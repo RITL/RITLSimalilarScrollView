@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias ScrollBlock = (scale : Int) -> Void
+typealias ScrollBlock = ((Int) -> Void)
 
 
 /// 上端的滚动状态栏
@@ -18,9 +18,9 @@ class YSimailarScrollView: UIView {
     var showChooseView:UIView!                  //负责显示选中的视图
     var showSelectView:UIView!                  //展示背后存放的视图
     
-    var backTitleColor = UIColor.blackColor()   //底层展示文字颜色
-    var showTitleColor = UIColor.whiteColor()   //选中展示文字颜色
-    var showBackColor = UIColor.redColor()      //选中视图的背景色
+    var backTitleColor = UIColor.black   //底层展示文字颜色
+    var showTitleColor = UIColor.white   //选中展示文字颜色
+    var showBackColor = UIColor.red     //选中视图的背景色
     
     var fontSize = 16.0             //文字的大小
     var duration = 0.5              //动画完成的时间
@@ -68,6 +68,8 @@ class YSimailarScrollView: UIView {
     
     override func layoutSubviews()
     {
+        super.layoutSubviews()
+        
         //初始化宽度
         width = self.frame.size.width / (CGFloat(numberOfTitle))
         
@@ -101,7 +103,7 @@ class YSimailarScrollView: UIView {
      */
     func createBottomLabel()
     {
-        for(var i = 0; i < titles.count; i++)
+        for i in 0 ..< titles.count
         {
             let label = createLabel(i, titleColor: backTitleColor)
             bottomScrollView.addSubview(label)
@@ -129,7 +131,7 @@ class YSimailarScrollView: UIView {
     {
         showSelectView.frame = bottomScrollView.bounds
         
-        for(var i = 0; i < titles.count; i++)
+        for i in 0 ..< titles.count
         {
             showSelectView.addSubview(createLabel(i, titleColor: showTitleColor))
         }
@@ -143,7 +145,7 @@ class YSimailarScrollView: UIView {
      */
     func createResponseButton()
     {
-        for(var i = 0; i < titles.count; i++)
+        for i in 0 ..< titles.count
         {
             let button = createButton(i)
             bottomScrollView.addSubview(button)
@@ -159,12 +161,12 @@ class YSimailarScrollView: UIView {
      
      :returns: 创建好的Label
      */
-    func createLabel(index : NSInteger, titleColor : UIColor) -> UILabel
+    func createLabel(_ index : NSInteger, titleColor : UIColor) -> UILabel
     {
-        let frame = CGRectMake((CGFloat(index)) * width!, 0, width!, sHeight)
+        let frame = CGRect(x: (CGFloat(index)) * width!, y: 0, width: width!, height: sHeight)
         let label = UILabel(frame: frame)
-        label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont.systemFontOfSize(CGFloat(fontSize))
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: CGFloat(fontSize))
         label.textColor = titleColor
         label.text = titles[index]
         labels?.append(label)//添加到数组
@@ -179,13 +181,13 @@ class YSimailarScrollView: UIView {
      
      :returns: 当前标签的frame
      */
-    func createButton(index: NSInteger) -> UIButton
+    func createButton(_ index: NSInteger) -> UIButton
     {
-        let button = UIButton(type: UIButtonType.Custom)
+        let button = UIButton(type: .custom)
         button.frame = frameOfView(index)
         button.tag = index
-        button.backgroundColor = UIColor.clearColor()
-        button.addTarget(self, action: Selector("labelDidTap:"), forControlEvents: UIControlEvents.TouchUpInside)
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(YSimailarScrollView.labelDidTap(_:)), for: .touchUpInside)
         return button
     }
     
@@ -196,7 +198,7 @@ class YSimailarScrollView: UIView {
      
      :returns: 当前索引的lable的frame
      */
-    func frameOfView(index:NSInteger) -> CGRect
+    func frameOfView(_ index:NSInteger) -> CGRect
     {
         return labels![index].frame
     }
@@ -211,7 +213,7 @@ class YSimailarScrollView: UIView {
     
     :param: sender 回调的发送者
     */
-    func labelDidTap(sender : AnyObject)
+    func labelDidTap(_ sender : AnyObject)
     {
         //获取button
         let button = sender as! UIButton
@@ -222,13 +224,14 @@ class YSimailarScrollView: UIView {
         let frameSelect = handleFrame(frame)
         
         //回调Block
-        scrollBlockHandle!(scale: Int(frame.origin.x / width!))
+        scrollBlockHandle!(Int(frame.origin.x / width!))
         
         //设置frame
-        UIView.animateWithDuration(duration) { () -> Void in
+        UIView.animate(withDuration: duration, animations: { 
+            
             self.showChooseView.frame = frame
             self.showSelectView.frame =  frameSelect
-        }
+        }) 
     }
     
     
@@ -240,7 +243,7 @@ class YSimailarScrollView: UIView {
     
     :param: scrollBlockHandleNew 闭包回调
     */
-    func selectTapBlockHandle(scrollBlockHandleNew:ScrollBlock)
+    func selectTapBlockHandle(_ scrollBlockHandleNew:@escaping ScrollBlock)
     {
         scrollBlockHandle = scrollBlockHandleNew
     }
@@ -253,7 +256,7 @@ class YSimailarScrollView: UIView {
     
     :returns: 处理完毕的frame
     */
-    func handleFrame(frame : CGRect) -> CGRect
+    func handleFrame(_ frame : CGRect) -> CGRect
     {
         var frameHandle = frame
         frameHandle.origin.x = -1 * frame.origin.x
@@ -268,7 +271,7 @@ class YSimailarScrollView: UIView {
     
     :param: contentOff 滚动的偏移量
     */
-    func sliderSimailarScrollView(contentOff : CGPoint)
+    func sliderSimailarScrollView(_ contentOff : CGPoint)
     {
         //获取当前选中视图的位置
         var frame = showChooseView.frame
@@ -277,10 +280,10 @@ class YSimailarScrollView: UIView {
         frame.origin.x = contentOff.x / CGFloat(numberOfTitle)
         
         //动画执行
-        UIView.animateWithDuration(0.2) { () -> Void in
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
             
             self.showChooseView.frame = frame
             self.showSelectView.frame = self.handleFrame(frame)
-        }
+        }) 
     }
 }

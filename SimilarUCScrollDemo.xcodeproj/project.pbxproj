@@ -12,8 +12,6 @@
 		DB7925111C89190F00AEA90C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB79250F1C89190F00AEA90C /* Main.storyboard */; };
 		DB7925131C89190F00AEA90C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7925121C89190F00AEA90C /* Assets.xcassets */; };
 		DB7925161C89190F00AEA90C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7925141C89190F00AEA90C /* LaunchScreen.storyboard */; };
-		DB7925211C89190F00AEA90C /* SimilarUCScrollDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7925201C89190F00AEA90C /* SimilarUCScrollDemoTests.swift */; };
-		DB79252C1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79252B1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift */; };
 		DB79253D1C89196E00AEA90C /* YSimailarScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB79253C1C89196D00AEA90C /* YSimailarScrollView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,11 +41,7 @@
 		DB7925151C89190F00AEA90C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB7925171C89190F00AEA90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB79251C1C89190F00AEA90C /* SimilarUCScrollDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimilarUCScrollDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB7925201C89190F00AEA90C /* SimilarUCScrollDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarUCScrollDemoTests.swift; sourceTree = "<group>"; };
-		DB7925221C89190F00AEA90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7925271C89190F00AEA90C /* SimilarUCScrollDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimilarUCScrollDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB79252B1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarUCScrollDemoUITests.swift; sourceTree = "<group>"; };
-		DB79252D1C89190F00AEA90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB79253C1C89196D00AEA90C /* YSimailarScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSimailarScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				DB79250A1C89190F00AEA90C /* SimilarUCScrollDemo */,
-				DB79251F1C89190F00AEA90C /* SimilarUCScrollDemoTests */,
-				DB79252A1C89190F00AEA90C /* SimilarUCScrollDemoUITests */,
 				DB7925091C89190F00AEA90C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,24 +100,6 @@
 				DB7925171C89190F00AEA90C /* Info.plist */,
 			);
 			path = SimilarUCScrollDemo;
-			sourceTree = "<group>";
-		};
-		DB79251F1C89190F00AEA90C /* SimilarUCScrollDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				DB7925201C89190F00AEA90C /* SimilarUCScrollDemoTests.swift */,
-				DB7925221C89190F00AEA90C /* Info.plist */,
-			);
-			path = SimilarUCScrollDemoTests;
-			sourceTree = "<group>";
-		};
-		DB79252A1C89190F00AEA90C /* SimilarUCScrollDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DB79252B1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift */,
-				DB79252D1C89190F00AEA90C /* Info.plist */,
-			);
-			path = SimilarUCScrollDemoUITests;
 			sourceTree = "<group>";
 		};
 		DB7925391C89193400AEA90C /* SimilarScrollView */ = {
@@ -206,13 +180,16 @@
 					DB7925071C89190F00AEA90C = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 8S4NWFZC5J;
+						LastSwiftMigration = 0820;
 					};
 					DB79251B1C89190F00AEA90C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = DB7925071C89190F00AEA90C;
 					};
 					DB7925261C89190F00AEA90C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = DB7925071C89190F00AEA90C;
 					};
 				};
@@ -279,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB7925211C89190F00AEA90C /* SimilarUCScrollDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB79252C1C89190F00AEA90C /* SimilarUCScrollDemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +391,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.SimilarUCScrollDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -428,6 +404,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.SimilarUCScrollDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -439,6 +416,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.SimilarUCScrollDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimilarUCScrollDemo.app/SimilarUCScrollDemo";
 			};
 			name = Debug;
@@ -451,6 +429,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.SimilarUCScrollDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimilarUCScrollDemo.app/SimilarUCScrollDemo";
 			};
 			name = Release;
@@ -462,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.SimilarUCScrollDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SimilarUCScrollDemo;
 				USES_XCTRUNNER = YES;
 			};
@@ -474,6 +454,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.SimilarUCScrollDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SimilarUCScrollDemo;
 				USES_XCTRUNNER = YES;
 			};

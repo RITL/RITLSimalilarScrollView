@@ -20,7 +20,7 @@ class ViewController: UIViewController ,UIScrollViewDelegate{
         let titles = ["Hello","Objctive-C","Swift","C++","Java"]
         
         //创建滚动视图对象
-        let frame = CGRectMake(0, 30, self.view.bounds.size.width, 40)
+        let frame = CGRect(x: 0, y: 30, width: self.view.bounds.size.width, height: 40)
         simailarScorllView = YSimailarScrollView(frame: frame)
         
         //设置相关属性
@@ -36,15 +36,15 @@ class ViewController: UIViewController ,UIScrollViewDelegate{
         
         
         //初始化滚动视图
-        scrollView.frame = CGRectMake(0, 70, self.view.bounds.size.width, self.view.bounds.size.height - 70)
+        scrollView.frame = CGRect(x: 0, y: 70, width: self.view.bounds.size.width, height: self.view.bounds.size.height - 70)
         scrollView.delegate = self;
-        scrollView.pagingEnabled = true
+        scrollView.isPagingEnabled = true
         self.view.addSubview(scrollView)
         
         
         
         //初始化五个视图
-        for(var i = 0; i < 5; i++)
+        for i in 0 ..< 5
         {
            scrollView.addSubview(createView(i, title: titles[i]))
         }
@@ -54,13 +54,13 @@ class ViewController: UIViewController ,UIScrollViewDelegate{
     
     
     
-    func createView(index : Int,title : String) -> UIView
+    func createView(_ index : Int,title : String) -> UIView
     {
-        let view = UIView(frame: CGRectMake(CGFloat(index) * scrollView.bounds.size.width,0,scrollView.bounds.size.width,scrollView.bounds.size.height))
+        let view = UIView(frame: CGRect(x: CGFloat(index) * scrollView.bounds.size.width,y: 0,width: scrollView.bounds.size.width,height: scrollView.bounds.size.height))
         
-        let label = UILabel(frame: CGRectMake(10,20,150,30))
-        label.textColor = UIColor.purpleColor()
-        label.font = UIFont.systemFontOfSize(14)
+        let label = UILabel(frame: CGRect(x: 10,y: 20,width: 150,height: 30))
+        label.textColor = UIColor.purple
+        label.font = UIFont.systemFont(ofSize: 14)
         label.text = "我是" + title
         view.addSubview(label)
         
@@ -76,7 +76,7 @@ class ViewController: UIViewController ,UIScrollViewDelegate{
     
     
     //MARK: - UIScrollView Delegate
-    func scrollViewDidScroll(scrollView: UIScrollView)
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
         //获取当前的偏移量
         let point = scrollView.contentOffset;
